@@ -1,0 +1,183 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="AdminMasterPager.master.vb" Inherits="WendyProperties.AdminMasterPager" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Administration</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <script src="assets/js/chart-master/Chart.js"></script>
+    <link href="css/custom.css" rel="stylesheet">
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="nav-md">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="scriptman" runat="server"></asp:ScriptManager>
+        <div>
+            <section id="container">
+                <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+                <!--header start-->
+                <header class="header black-bg">
+                    <div class="sidebar-toggle-box">
+                        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+                    </div>
+                    <!--logo start-->
+                    <a href="index.html" class="logo"><b>Wendy Properties Admin</b></a>
+                    <!--logo end-->
+                    <div class="nav notify-row" id="top_menu">
+                        <!--  notification start -->
+                        
+                        <!--  notification end -->
+                    </div>
+                    <div class="top-menu">
+                        <ul class="nav pull-right top-menu">
+                            <li>
+                                <!--<a class="logout" href="login.aspx">Logout</a>-->
+                                <asp:Button ID="btnLogout" runat="server" OnClick="btnLogout_Click" Text="Logout" CssClass="btn btn-xs btn-danger logout" CausesValidation="false" />
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                <!--header end-->
+
+                <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+                <!--sidebar start-->
+                <aside>
+                    <div id="sidebar" class="nav-collapse ">
+                        <!-- sidebar menu start-->
+                        <ul class="sidebar-menu" id="nav-accordion">
+
+                            <p class="centered">
+                                <a href="Users.aspx">
+                                    <img src="Images/logo.jpg" class="img-circle" width="160"></a>
+                            </p>
+                            <h5 class="centered" id="lblFullName" runat="server">
+                                <asp:Label ID="Label1" runat="server" Text="lblUsername"></asp:Label></h5>
+
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <i class="fa fa-user"></i>
+                                    <span>Manage Users</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="Registration.aspx">Add Admin Users</a></li>
+                                    <li><a href="Users.aspx">Show Admin Users</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <i class="fa li_star"></i>
+                                    <span>Manage Agents</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="AddNewAgent.aspx">Add Agents</a></li>
+                                    <li><a href="Agents.aspx">Show Agents</a></li>
+                                   
+                                </ul>
+                            </li> 
+                            <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <i class="fa fa-bar-chart-o"></i>
+                                    <span>Manage Listings</span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a href="AddListing.aspx">Add Listings</a></li>
+                                    <li><a href="Listings.aspx">Show Listings</a></li>
+                                   
+                                </ul>
+                            </li> 
+                           <li class="sub-menu">
+                                <a href="javascript:;">
+                                    <i class="fa li_note"></i>
+                                    <span>Manage Leads</span>
+                                </a>
+                                <ul class="sub">
+                             
+                                    <li><a href="Leads.aspx">Show Leads</a></li>
+                                   
+                                </ul>
+                            </li> 
+                        </ul>
+                        <hr />
+                        <br />
+                        <footer>
+                            <div class="text-center">
+                               <label style="color:white">Designed & Maintained By Samkelisiwe Mbatha</label>
+                            </div>
+                        </footer>
+                        <!-- sidebar menu end-->
+                    </div>
+                </aside>
+                <!--sidebar end-->
+
+                <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+                <!--main content start-->
+                <section id="main-content">
+                    <section class="wrapper">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                            <!-- /col-lg-9 END SECTION MIDDLE -->
+                        </div>
+                        <! --/row -->
+                    </section>
+                </section>
+                <!--main content end-->
+               
+            </section>
+            <!-- js placed at the end of the document so the pages load faster -->
+            <script src="assets/js/jquery.js"></script>
+            <script src="assets/js/jquery-1.8.3.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+            <script src="assets/js/jquery.scrollTo.min.js"></script>
+            <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+            <script src="assets/js/jquery.sparkline.js"></script>
+
+
+            <!--common script for all pages-->
+            <script src="assets/js/common-scripts.js"></script>
+
+            <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+            <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+
+            <!--script for this page-->
+            <script src="assets/js/sparkline-chart.js"></script>
+            <script src="assets/js/zabuto_calendar.js"></script>
+            <script src="assets/js/jquery.dataTables.min.js"></script>
+            
+
+        </div>
+    </form>
+</body>
+</html>

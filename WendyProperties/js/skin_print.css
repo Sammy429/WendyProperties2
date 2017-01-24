@@ -1,0 +1,35 @@
+#wrapper {
+    margin: 0;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+#branding-navigation {
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    border-radius: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+    #branding-navigation a {
+        text-shadow: none;
+    }
+
+    #branding-navigation h1 a .fa, #branding-navigation h1 a + span, #branding-navigation ul {
+        display: none;
+    }
+
+#branding-navigation, #content {
+    border: none;
+}
+
+#content {
+    padding-top: 10px;
+    color: #333;
+}
+
+    #content h2 {
+        top: -90px;
+    }
